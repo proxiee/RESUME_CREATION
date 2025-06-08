@@ -5,6 +5,7 @@ import subprocess
 import sys
 from dotenv import load_dotenv
 from datetime import datetime
+from pdf2docx import Converter # <-- Added for DOCX conversion
 
 # --- CONFIGURATION ---
 load_dotenv()
@@ -119,7 +120,6 @@ def generate_tailored_content(model, base_resume, job_desc):
         "projects": base_resume["projects"]
     }
 
-    # Calculate the length of the original summary to guide the AI
     original_summary_length = len(base_resume.get("summary", ""))
 
     prompt = f"""
@@ -267,7 +267,6 @@ def build_latex_from_data(data):
         for proj in data['projects']:
             points_latex = "\\resumeItemListStart\n" + "\n".join([f"\\resumeItem{{{sanitize_latex(point)}}}" for point in proj.get('points', [])]) + "\n\\resumeItemListEnd"
             project_parts.append(f"\\resumeProjectHeading{{\\textbf{{{sanitize_latex(proj.get('name'))}}}}}{{\\textit{{{sanitize_latex(proj.get('dates'))}}}}}\n{points_latex}")
-        # Reverted to original spacing to prevent overlap
         latex_parts.append("\\vspace{-6pt}\n".join(project_parts))
         latex_parts.append(r"""\resumeSubHeadingListEnd
 \vspace{-17pt}""")
@@ -295,8 +294,10 @@ def build_latex_from_data(data):
 def find_unique_filename(base_name):
     counter = 0
     while True:
-        if counter == 0: tex_filename = f"{base_name}.tex"
-        else: tex_filename = f"{base_name}_{counter}.tex"
+        if counter == 0:
+            tex_filename = f"{base_name}.tex"
+        else:
+            tex_filename = f"{base_name}_{counter}.tex"
         if not os.path.exists(tex_filename):
             return tex_filename, tex_filename.replace('.tex', '.pdf')
         counter += 1
@@ -326,21 +327,18 @@ def main():
     with open(JOB_DESCRIPTION_PATH, 'r', encoding='utf-8') as f:
         job_description_text = f.read()
 
+    # Since there's no interactive prompt anymore, we default to tailoring all sections
     tailored_sections = generate_tailored_content(model, base_resume_data, job_description_text)
     if not tailored_sections:
         print("❌ Exiting due to API error.")
         return
         
-    # --- DEBUGGING STEP: Print the AI's response ---
     print("\n✨ Here is the tailored content from the AI: ✨")
     print(json.dumps(tailored_sections, indent=2))
-    # --------------------------------------------------
 
     final_resume_data = base_resume_data.copy()
     final_resume_data.update(tailored_sections)
     
-    # The 'template.tex' file is no longer needed for building.
-    # The build_latex_from_data function now constructs the entire document.
     print("\n📄 Building final LaTeX document from tailored data...")
     final_latex = build_latex_from_data(final_resume_data)
     
@@ -350,12 +348,25 @@ def main():
         f.write(final_latex)
 
     # --- Step 3: Compile the final PDF ---
-    print(f"\n--- Step 3 of 3: Compiling {output_pdf_file} ---")
+    print(f"\n--- Step 3 of 3: Compiling PDF and Word Document ---")
     for i in range(2): 
         process = subprocess.run(['pdflatex', '-interaction=nonstopmode', output_latex_file], capture_output=True, text=True, encoding='utf-8')
 
     if process.returncode == 0:
         print(f"✅ Successfully created {output_pdf_file}")
+        
+        # --- NEW STEP: Convert the created PDF to a Word Document ---
+        docx_file = output_pdf_file.replace('.pdf', '.docx')
+        print(f"📄 Converting to {docx_file}...")
+        try:
+            cv = Converter(output_pdf_file)
+            cv.convert(docx_file, start=0, end=None)
+            cv.close()
+            print(f"✅ Successfully created {docx_file}!")
+        except Exception as e:
+            print(f"❌ Could not convert PDF to DOCX. Error: {e}")
+
+        # Open the PDF for preview
         print("🚀 Opening preview...")
         if sys.platform == "win32":
             os.startfile(output_pdf_file)
