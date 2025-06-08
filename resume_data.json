@@ -1,103 +1,79 @@
 {
-  "name": "Yashwanth Raj Tirupati",
-  "phone": "(937)-469-9700",
-  "email": "tyashwanth99@gmail.com",
-  "linkedin": "https://linkedin.com/in/yashwanthtirupati",
-  "github": "https://github.com/proxiee",
-  "summary": "Results-driven AI and Computer Vision Engineer with an M.S. in Computer Science and expertise in developing and deploying deep learning models for AR/VR. Proficient in C++ and Python with a strong background in PyTorch, developing novel algorithms, and optimizing on-device performance to improve model accuracy and system latency.",
+  "name": "Jane Doe",
+  "phone": "+1 (555) 123-4567",
+  "email": "jane.doe@email.com",
+  "linkedin": "linkedin.com/in/janedoe",
+  "github": "github.com/janedoe",
+  "summary": "Highly motivated and results-oriented individual with a proven track record in software engineering and data analysis.  Seeking a challenging role where I can leverage my skills and experience to contribute to the success of a dynamic team.",
   "education": [
     {
-      "university": "University of Dayton",
-      "location": "Dayton, Ohio, USA",
-      "degree": "M.S. in Computer Science",
-      "dates": "Aug 2023 - May 2025",
-      "details": [
-        "Concentrations: Autonomous Systems and Data Science",
-        "GPA: 3.41/4.00",
-        "Related Coursework: Data Structures & Algorithms, Objects & Design, Virtual Reality, Machine Learning, Artificial Intelligence, Object-Oriented Programming, Algorithm Design, Advanced Computer Vision."
-      ]
+      "university": "Stanford University",
+      "degree": "Master of Science in Computer Science",
+      "dates": "2020-2022",
+      "gpa": "3.9/4.0"
     },
     {
-      "university": "Jawaharlal Nehru Technological University",
-      "location": "Hyderabad, Telangana, India",
-      "degree": "B.Tech. in Computer Science & Engineering",
-      "dates": "June 2018 - July 2022",
-      "details": [
-        "CGPA: 7.3/10.00",
-        "Related Coursework: Operating Systems, Database Management Systems, Computer Networks, Discrete Mathematics, Web Technologies, Software Engineering."
-      ]
+      "university": "University of California, Berkeley",
+      "degree": "Bachelor of Science in Electrical Engineering and Computer Sciences",
+      "dates": "2016-2020",
+      "gpa": "3.8/4.0"
     }
   ],
   "experience": [
     {
-      "company": "Cognizant Technology Solutions",
-      "location": "Chennai, Tamil Nadu, India",
-      "title": "Software Developer",
-      "dates": "March 2023 - Aug 2023",
-      "points": [
-        "Developed and deployed full-stack features for enterprise-level systems using Spring Boot (Java) and modern front-end frameworks, focusing on writing extensible, maintainable, and high-quality code.",
-        "Partnered with product stakeholders to translate user requirements into technical specifications and collaborated within an Agile team to deliver robust solutions, improving API response times by 15%."
-      ]
+      "title": "Software Engineer",
+      "company": "Google",
+      "dates": "June 2022 - Present",
+      "description": "Developed and maintained high-performance web applications using Java and Spring Boot.  Implemented new features and improved existing functionalities, resulting in a 20\\% increase in user engagement."
     },
     {
-      "company": "Cognizant Technology Solutions",
-      "location": "Chennai, Tamil Nadu, India",
-      "title": "Programmer Analyst Intern",
-      "dates": "March 2022-Sept 2022",
-      "points": [
-        "Contributed to the full software development lifecycle by identifying and fixing bugs in enterprise applications, leading to a 10% reduction in reported issues for key modules.",
-        "Authored technical documentation and augmented test automation to improve code quality and reliability."
-      ]
+      "title": "Data Analyst Intern",
+      "company": "Facebook",
+      "dates": "Summer 2021",
+      "description": "Analyzed large datasets to identify trends and insights, contributing to strategic decision-making.  Developed data visualization dashboards using Tableau."
     }
   ],
   "projects": [
     {
-      "name": "Real-time Hand Tracking & Gesture Recognition for AR | University Project",
-      "dates": "Jan 2024-May 2025",
-      "points": [
-        "Developed a novel deep learning model in C++ and PyTorch for high-fidelity hand tracking in a simulated AR environment, achieving 98.5% tracking accuracy on a custom dataset of 50 complex gestures.",
-        "Engineered a lightweight architecture and implemented a data augmentation pipeline, reducing latency by 30% and increasing model robustness by 25% to enable 90 FPS on-device performance."
-      ]
+      "name": "Machine Learning Model for Fraud Detection",
+      "description": "Developed a machine learning model using Python and scikit-learn to detect fraudulent transactions with 95\\% accuracy.  Deployed the model to a production environment using AWS."
     },
     {
-      "name": "On-Device 3D Scene Reconstruction for VR | Personal Project",
-      "dates": "Jun 2024 - Present",
-      "points": [
-        "Architected a complete 3D reconstruction pipeline in Python and created a custom SLAM algorithm that decreased tracking drift by 40% compared to baseline methods for large-scale environments.",
-        "Optimized the entire system for resource-constrained mobile hardware, achieving a 2.5x speedup in mesh generation and enabling interactive on-device performance."
-      ]
-    },
-    {
-      "name": "Semantic Segmentation for Dynamic AR Occlusion | Personal Project",
-      "dates": "Sep 2023-Dec 2023",
-      "points": [
-        "Trained a PyTorch semantic segmentation model for realistic AR occlusion, achieving 92% mloU.",
-        "Designed a distributed training process using Kubernetes that accelerated model experimentation and hyperparameter tuning by 5x."
-      ]
+      "name": "Mobile Application for Task Management",
+      "description": "Designed and developed a mobile application for task management using React Native.  The application is available on both iOS and Android platforms."
     }
   ],
-  "activities": [
+  "activities_and_leadership": [
     {
-      "organization": "University of Dayton",
-      "location": "Dayton, Ohio, USA",
-      "roles": [
-        {
-          "title": "Teaching Assitant, CPS 501 (Advanced Programming and Data Structures)",
-          "dates": "Jan 2024-Apr 2024"
-        },
-        {
-          "title": "Secretary, Indian Student Association (100+ members)",
-          "dates": "Aug 2023-Apr 2024"
-        }
-      ]
+      "activity": "President of ACM",
+      "description": "Led a team of 20 students in organizing various events and workshops."
+    },
+    {
+      "activity": "Volunteer at local soup kitchen",
+      "description": "Volunteered weekly to assist with food preparation and distribution."
     }
   ],
   "skills": {
-    "Languages": "Python, Java, C++, C, JavaScript, Kotlin",
-    "Frontend": "HTML, CSS, ReactJS, AJAX",
-    "Backend Frameworks": "SpringBoot, NodeJS",
-    "Database": "MySQL, MongoDB, Postgres",
-    "Automation": "Appium, Selenium, Cucumber BDD, Jenkins, JUnit",
-    "AI & ML": "PyTorch, TensorFlow, Jupyter, OpenCV, LLMs(GPT)"
+    "programming_languages": [
+      "Java",
+      "Python",
+      "C++",
+      "JavaScript"
+    ],
+    "technologies": [
+      "Spring Boot",
+      "React Native",
+      "AWS",
+      "Tableau",
+      "SQL",
+      "Git"
+    ],
+    "other_skills": [
+      "Data Analysis",
+      "Machine Learning",
+      "Project Management",
+      "Communication",
+      "Teamwork"
+    ]
   }
 }

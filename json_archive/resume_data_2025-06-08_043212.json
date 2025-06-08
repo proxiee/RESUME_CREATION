@@ -1,0 +1,90 @@
+{
+  "name": "Jane Doe",
+  "phone": "+1-555-123-4567",
+  "email": "jane.doe@email.com",
+  "linkedin": "linkedin.com/in/janedoe",
+  "github": "github.com/janedoe",
+  "summary": "Highly motivated and results-oriented individual with 5+ years of experience in software engineering. Proven ability to design, develop, and deploy high-quality software solutions. Seeking a challenging role where I can leverage my skills and experience to contribute to the success of a dynamic team.",
+  "education": [
+    {
+      "university": "Stanford University",
+      "degree": "Master of Science in Computer Science",
+      "dates": "2020-2022"
+    },
+    {
+      "university": "University of California, Berkeley",
+      "degree": "Bachelor of Science in Computer Science",
+      "dates": "2016-2020"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer",
+      "company": "Google",
+      "dates": "2022-Present",
+      "description": "Developed and maintained software applications using Java and Python.  Collaborated with cross-functional teams to deliver high-quality products. Implemented new features and improved existing codebase."
+    },
+    {
+      "title": "Software Engineering Intern",
+      "company": "Facebook",
+      "dates": "2021-2022",
+      "description": "Designed and implemented a new algorithm that improved performance by 20%. Worked with a team of engineers to develop a new feature for the Facebook mobile app."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project Alpha",
+      "description": "Developed a web application using React and Node.js.  This project involved working with a team of developers to design, develop, and deploy a new web application.  The application is currently being used by over 1000 users.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB"
+      ]
+    },
+    {
+      "name": "Project Beta",
+      "description": "Created a machine learning model to predict customer churn. This involved collecting data, cleaning data, training a model, and evaluating the model's performance.",
+      "technologies": [
+        "Python",
+        "Scikit-learn",
+        "TensorFlow"
+      ]
+    }
+  ],
+  "activities_and_leadership": [
+    {
+      "activity": "ACM",
+      "description": "Member of the ACM student chapter.  Participated in various coding competitions and workshops."
+    },
+    {
+      "activity": "IEEE",
+      "description": "Member of the IEEE student chapter.  Attended conferences and workshops related to computer science."
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "Java",
+      "Python",
+      "C++",
+      "JavaScript"
+    ],
+    "databases": [
+      "SQL",
+      "MongoDB",
+      "PostgreSQL"
+    ],
+    "tools_and_technologies": [
+      "React",
+      "Node.js",
+      "TensorFlow",
+      "Scikit-learn",
+      "Docker",
+      "Kubernetes"
+    ],
+    "other_skills": [
+      "Problem-solving",
+      "Communication",
+      "Teamwork"
+    ]
+  }
+}

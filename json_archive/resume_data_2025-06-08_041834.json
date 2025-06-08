@@ -1,0 +1,64 @@
+{
+  "name": "Jane Doe",
+  "phone": "+1-555-123-4567",
+  "email": "jane.doe@email.com",
+  "linkedin": "linkedin.com/in/janedoe",
+  "github": "github.com/janedoe",
+  "summary": "Highly motivated and results-oriented individual with 5+ years of experience in software engineering.  Proven ability to design, develop, and implement high-quality software solutions.",
+  "education": [
+    {
+      "university": "Stanford University",
+      "degree": "Master of Science in Computer Science",
+      "dates": "2020-2022"
+    },
+    {
+      "university": "University of California, Berkeley",
+      "degree": "Bachelor of Science in Computer Science",
+      "dates": "2016-2020"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer",
+      "company": "Google",
+      "dates": "2022-Present",
+      "description": "Developed and maintained key features for Google's search algorithm."
+    },
+    {
+      "title": "Software Engineering Intern",
+      "company": "Facebook",
+      "dates": "Summer 2021",
+      "description": "Contributed to the development of a new social media feature."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project Alpha",
+      "description": "Developed a machine learning model to predict stock prices."
+    },
+    {
+      "name": "Project Beta",
+      "description": "Created a web application to manage tasks."
+    }
+  ],
+  "activities": [
+    "Member of ACM",
+    "Volunteer at local soup kitchen"
+  ],
+  "skills": {
+    "Programming Languages": [
+      "Java",
+      "Python",
+      "C++"
+    ],
+    "Databases": [
+      "SQL",
+      "NoSQL"
+    ],
+    "Tools": [
+      "Git",
+      "Docker",
+      "Kubernetes"
+    ]
+  }
+}

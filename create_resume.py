@@ -8,11 +8,7 @@ from datetime import datetime
 
 # --- CONFIGURATION ---
 load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") 
-BASE_RESUME_PATH = "resume_data.json"
-LATEX_TEMPLATE_PATH = "template.tex"
-JSON_RULES_PATH = "json_command.txt"
-ARCHIVE_FOLDER = "json_archive"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if len(sys.argv) < 2:
     print("Usage: python create_resume.py <path_to_job_description.txt>")
     sys.exit(1)
@@ -21,26 +17,14 @@ BASE_OUTPUT_NAME = "tailored_resume"
 
 def sanitize_latex(text):
     """Sanitizes text to be safe for LaTeX."""
-    if not isinstance(text, str):
-        return text
-    text = text.replace('&', r'\&')
-    text = text.replace('%', r'\%')
-    text = text.replace('$', r'\$')
-    text = text.replace('#', r'\#')
-    text = text.replace('_', r'\_')
-    text = text.replace('{', r'\{')
-    text = text.replace('}', r'\}')
-    text = text.replace('~', r'\textasciitilde{}')
-    text = text.replace('^', r'\textasciicircum{}')
-    return text
+    if not isinstance(text, str): return text
+    return text.replace('&', r'\&').replace('%', r'\%').replace('$', r'\$').replace('#', r'\#').replace('_', r'\_').replace('{', r'\{').replace('}', r'\}').replace('~', r'\textasciitilde{}').replace('^', r'\textasciicircum{}')
 
 def setup_api():
     """Configures the Gemini API and handles missing API key."""
     if not GEMINI_API_KEY:
-        print("❌ Error: GEMINI_API_KEY not found.")
-        print("Please ensure you have a .env file with the line: GEMINI_API_KEY=\"your-key\"")
+        print("❌ Error: GEMINI_API_KEY not found in .env file.")
         sys.exit(1)
-    
     try:
         genai.configure(api_key=GEMINI_API_KEY)
         return genai.GenerativeModel('gemini-1.5-flash')
@@ -48,93 +32,62 @@ def setup_api():
         print(f"Error configuring Gemini API: {e}")
         sys.exit(1)
 
-def archive_old_json():
-    """Moves the existing JSON data file to an archive folder with a timestamp."""
-    print("📂 Checking for existing JSON file to archive...")
-    if not os.path.exists(ARCHIVE_FOLDER):
-        os.makedirs(ARCHIVE_FOLDER)
-        print(f"Created archive folder: '{ARCHIVE_FOLDER}'")
+def get_user_info():
+    """Interactively collects resume information from the user."""
+    print("--- Please provide your information ---")
+    data = {}
+    data['name'] = input("Full Name: ")
+    data['phone'] = input("Phone Number: ")
+    data['email'] = input("Email Address: ")
+    data['linkedin'] = input("LinkedIn URL: ")
+    data['github'] = input("GitHub URL: ")
+    
+    data['education'] = []
+    while True:
+        add_edu = input("Add an education entry? (y/n): ").lower()
+        if add_edu != 'y': break
+        edu = {}
+        edu['university'] = input("  University/School Name: ")
+        edu['location'] = input("  Location (e.g., City, State): ")
+        edu['degree'] = input("  Degree (e.g., M.S. in Computer Science): ")
+        edu['dates'] = input("  Dates (e.g., Aug 2023 - May 2025): ")
+        edu['details'] = []
+        print("  Enter details/coursework (one per line, press Enter on an empty line to finish):")
+        while True:
+            detail = input("    > ")
+            if not detail: break
+            edu['details'].append(detail)
+        data['education'].append(edu)
 
-    if os.path.exists(BASE_RESUME_PATH):
-        timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
-        archive_path = os.path.join(ARCHIVE_FOLDER, f"resume_data_{timestamp}.json")
-        os.rename(BASE_RESUME_PATH, archive_path)
-        print(f"✅ Safely archived previous data to '{archive_path}'")
-    else:
-        print("No existing JSON file found to archive. Skipping.")
+    data['experience'] = []
+    while True:
+        add_exp = input("Add a work experience entry? (y/n): ").lower()
+        if add_exp != 'y': break
+        exp = {}
+        exp['company'] = input("  Company Name: ")
+        exp['location'] = input("  Location: ")
+        exp['title'] = input("  Job Title: ")
+        exp['dates'] = input("  Dates: ")
+        exp['points'] = []
+        print("  Enter bullet points/duties (one per line, press Enter on an empty line to finish):")
+        while True:
+            point = input("    > ")
+            if not point: break
+            exp['points'].append(point)
+        data['experience'].append(exp)
+        
+    return data
 
-
-def update_json_from_template(model):
-    """
-    Reads the LaTeX template and a rules file, then asks the AI to parse the
-    template and create an updated resume_data.json file.
-    """
-    print("🤖 Calling Gemini to parse template and create new JSON...")
-    try:
-        with open(LATEX_TEMPLATE_PATH, 'r', encoding='utf-8') as f:
-            template_content = f.read()
-        with open(JSON_RULES_PATH, 'r', encoding='utf-8') as f:
-            json_rules = f.read()
-
-        prompt = f"""
-        You are a highly precise data extraction tool. Your task is to read the content from a LaTeX file and convert it into a valid JSON object. You must strictly follow the formatting rules provided. Ensure all text content is extracted accurately.
-
-        **Rules for the JSON structure:**
-        ---
-        {json_rules}
-        ---
-
-        **LaTeX file content to parse:**
-        ```latex
-        {template_content}
-        ```
-
-        Your output must be ONLY the valid JSON object, with no other text, comments, or explanations.
-        """
-
-        response = model.generate_content(prompt)
-        cleaned_response = response.text.strip().lstrip("```json").rstrip("```").strip()
-        new_json_data = json.loads(cleaned_response)
-
-        with open(BASE_RESUME_PATH, 'w', encoding='utf-8') as f:
-            json.dump(new_json_data, f, indent=2)
-
-        print(f"✅ Successfully created new '{BASE_RESUME_PATH}'.")
-        return True
-
-    except FileNotFoundError as e:
-        print(f"❌ Error: Could not find required file for JSON update: {e.filename}")
-        return False
-    except Exception as e:
-        print(f"❌ An error occurred during the JSON update process: {e}")
-        return False
-
-def generate_tailored_content(model, base_resume, job_desc):
-    """Sends a prompt to Gemini and gets tailored resume content back."""
-    print("🤖 Calling Gemini to tailor content for the job...")
-
-    sections_to_tailor = {
-        "summary": base_resume["summary"],
-        "experience": base_resume["experience"],
-        "projects": base_resume["projects"]
-    }
-
-    # Calculate the length of the original summary to guide the AI
-    original_summary_length = len(base_resume.get("summary", ""))
+def generate_creative_content(model, user_data, job_desc):
+    """Asks the AI to generate the summary, skills, and projects."""
+    print("\n🤖 Calling Gemini to generate creative content (Summary, Skills, Projects)...")
 
     prompt = f"""
-    You are an expert resume writer. Your task is to take a base resume's summary, experience, and projects, and a target job description, then rewrite those sections to be perfectly tailored for the job, ensuring the final resume fits on a single page.
+    You are an expert resume writer. Your task is to take a candidate's core information and a target job description, and then generate a compelling summary, skills section, and project section to make them a perfect fit for the job.
 
-    **Instructions:**
-    1.  Rewrite the 'summary' to be a powerful introduction that mirrors the language of the job description. The original summary is {original_summary_length} characters long. The new summary **MUST be very concise, approximately {original_summary_length - 40} to {original_summary_length} characters**, to ensure it fits within 3 lines on the final PDF.
-    2.  For each job in 'experience', rewrite the 'points' to use strong action verbs and include quantifiable metrics that align with the job description. Be concise.
-    3.  **Re-imagine the 'projects' section to have exactly 3 projects in total.** If an existing project is relevant, heavily rewrite it with keywords and quantifiable numbers from the job description. If a project is not relevant, replace it with a new, plausible project that is a perfect fit. The inclusion of keywords and metrics is mandatory.
-    4.  **Prioritize Conciseness for a One-Page Layout:** For all bullet points in 'experience' and 'projects', the new text must not be significantly longer than the original. Brevity is critical to ensure the entire resume fits on a single page.
-    5.  You MUST return ONLY a single, valid JSON object containing the updated 'summary', 'experience', and 'projects' sections. Maintain the original JSON structure perfectly.
-
-    **JSON to tailor:**
+    **Candidate's Core Information:**
     ```json
-    {json.dumps(sections_to_tailor, indent=2)}
+    {json.dumps(user_data, indent=2)}
     ```
 
     **Target Job Description:**
@@ -142,66 +95,41 @@ def generate_tailored_content(model, base_resume, job_desc):
     {job_desc}
     ```
 
-    Return ONLY the tailored JSON object.
-    """
+    **Your Task:**
+    1.  **Write a `summary`:** A powerful, 2-3 line introduction that highlights the candidate's experience and aligns with the job description.
+    2.  **Create a `skills` object:** Invent a list of relevant technical skills based on the job description. Group them into logical categories (e.g., "Languages", "Frameworks", "Cloud").
+    3.  **Invent a `projects` list:** Create exactly 3 new, highly relevant, and plausible project descriptions. For each project, create a compelling `name`, realistic `dates`, and 2-3 detailed `points` with strong, quantifiable metrics (e.g., percentages, latency, accuracy improvements) that showcase skills mentioned in the job description.
 
+    You MUST return ONLY a single, valid JSON object containing the `summary`, `skills`, and `projects` keys.
+    """
     try:
         response = model.generate_content(prompt)
-        cleaned_response = response.text.strip().lstrip("```json").rstrip("```").strip()
+        # It's critical to clean the response to get valid JSON
+        cleaned_response = response.text.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
         return json.loads(cleaned_response)
     except Exception as e:
-        print(f"Error calling Gemini API or parsing JSON: {e}")
-        print("--- Gemini's Raw Response ---")
-        print(response.text)
+        print(f"Error calling Gemini API or parsing creative content JSON: {e}")
         return None
 
 def build_latex_from_data(data):
-    """
-    Builds the entire LaTeX document from scratch using the provided data.
-    This function IS the template now, ensuring reliability.
-    """
+    """Builds the entire LaTeX document from scratch using the provided data."""
     
     latex_parts = [r"""
 \documentclass[letterpaper,11pt]{article}
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{fontawesome5}
-\usepackage{multicol}
-\setlength{\multicolsep}{-3.0pt}
-\setlength{\columnsep}{-1.0pt}
-\input{glyphtounicode}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-\urlstyle{same}
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\usepackage{latexsym}\usepackage[empty]{fullpage}\usepackage{titlesec}\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}\usepackage{verbatim}\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}\usepackage{fancyhdr}\usepackage[english]{babel}
+\usepackage{tabularx}\usepackage{fontawesome5}\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}\setlength{\columnsep}{-1.0pt}\input{glyphtounicode}
+\pagestyle{fancy}\fancyhf{}\fancyfoot{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}\addtolength{\evensidemargin}{-0.5in}\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}\addtolength{\textheight}{1.0in}
+\urlstyle{same}\raggedbottom\raggedright\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 \pdfgentounicode=1
 \newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-3pt}}}}
 \newcommand{\resumeSubheading}[4]{\vspace{-2pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-7pt}}
-\newcommand{\resumeSubSubheading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\textit{\small#1} & \textit{\small #2} \\\end{tabular*}\vspace{-7pt}}
 \newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-7pt}}
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
@@ -216,78 +144,52 @@ def build_latex_from_data(data):
     github = data.get('github', '')
     linkedin_user = linkedin.split('/')[-1] if 'linkedin.com' in linkedin else linkedin
     github_user = github.split('/')[-1] if 'github.com' in github else github
-    
     latex_parts.append(f"""
 \\begin{{center}}
     \\textbf{{\\Huge \\scshape {{\\fontsize{{15pt}}{{20pt}}\\selectfont {name}}}}} \\\\ \\vspace{{1pt}}
     \\small \\raisebox{{-0.1\\height}}\\faPhone\\ {phone} ~ \\href{{mailto:{email}}}{{\\raisebox{{-0.2\\height}}\\faEnvelope\\  \\underline{{{email}}}}} ~ 
-    \\href{{{linkedin}}}{{\\raisebox{{-0.2\\height}}\\faLinkedin\\ \\underline{{linkedin.com/in/{linkedin_user}}}}} ~ 
-    \\href{{{github}}}{{\\raisebox{{-0.2\\height}}\\faGithub\\ \\underline{{github.com/{github_user}}}}}
+    \\href{{{linkedin}}}{{\\raisebox{{-0.2\\height}}\\faLinkedin\\ \\underline{{[linkedin.com/in/](https://linkedin.com/in/){linkedin_user}}}}} ~ 
+    \\href{{{github}}}{{\\raisebox{{-0.2\\height}}\\faGithub\\ \\underline{{[github.com/](https://github.com/){github_user}}}}}
     \\vspace{{-8pt}}
 \\end{{center}}
 """)
-    if data.get('summary'):
-        latex_parts.append(r"""
-\section{{\fontsize{9pt}{20pt}\selectfont \textbf{SUMMARY}}}
-\resumeSubHeadingListStart
-""")
-        latex_parts.append(f"\\resumeItem{{{sanitize_latex(data['summary'])}}}")
-        latex_parts.append(r"""\resumeSubHeadingListEnd
-\vspace{-18pt}""")
-    if data.get('education'):
-        latex_parts.append(r"""
-\section{{\fontsize{9pt}{20pt}\selectfont \textbf{EDUCATION}}}
-\resumeSubHeadingListStart""")
-        for edu in data['education']:
-            details_list = []
-            for line in edu.get('details', []):
-                if ':' in line:
-                    parts = line.split(':', 1)
-                    details_list.append(f"\\resumeItem{{\\textbf{{{sanitize_latex(parts[0])}:}}{sanitize_latex(parts[1])}}}")
-                else:
-                    details_list.append(f"\\resumeItem{{{sanitize_latex(line)}}}")
-            details_latex = "\\resumeItemListStart\n" + "\n".join(details_list) + "\n\\resumeItemListEnd"
-            latex_parts.append(f"\\resumeSubheading{{{sanitize_latex(edu.get('university'))}}}{{\\textbf{{{sanitize_latex(edu.get('location'))}}}}}{{{sanitize_latex(edu.get('degree'))}}}{{{sanitize_latex(edu.get('dates'))}}}\n{details_latex}")
-        latex_parts.append(r"""\resumeSubHeadingListEnd
-\vspace{-18pt}""")
-    if data.get('experience'):
-        latex_parts.append(r"""
-\section{{\fontsize{9pt}{20pt}\selectfont \textbf{EXPERIENCE}}}
-\resumeSubHeadingListStart""")
-        for exp in data['experience']:
-            points_latex = "\\resumeItemListStart\n" + "\n".join([f"\\resumeItem{{{sanitize_latex(point)}}}" for point in exp.get('points', [])]) + "\n\\resumeItemListEnd"
-            latex_parts.append(f"\\resumeSubheading{{{sanitize_latex(exp.get('company'))}}}{{\\textbf{{{sanitize_latex(exp.get('location'))}}}}}{{{sanitize_latex(exp.get('title'))}}}{{{sanitize_latex(exp.get('dates'))}}}\n{points_latex}")
-        latex_parts.append(r"""\resumeSubHeadingListEnd
-\vspace{-17pt}""")
-    if data.get('projects'):
-        latex_parts.append(r"""
-\section{{\fontsize{9pt}{20pt}\selectfont \textbf{PROJECTS}}}
-\resumeSubHeadingListStart""")
-        project_parts = []
-        for proj in data['projects']:
-            points_latex = "\\resumeItemListStart\n" + "\n".join([f"\\resumeItem{{{sanitize_latex(point)}}}" for point in proj.get('points', [])]) + "\n\\resumeItemListEnd"
-            project_parts.append(f"\\resumeProjectHeading{{\\textbf{{{sanitize_latex(proj.get('name'))}}}}}{{\\textit{{{sanitize_latex(proj.get('dates'))}}}}}\n{points_latex}")
-        # Reverted to original spacing to prevent overlap
-        latex_parts.append("\\vspace{-6pt}\n".join(project_parts))
-        latex_parts.append(r"""\resumeSubHeadingListEnd
-\vspace{-17pt}""")
-    if data.get('activities'):
-        latex_parts.append(r"""
-\section{{\fontsize{9pt}{20pt}\selectfont \textbf{ACTIVITIES AND LEADERSHIP}}}
-\resumeSubHeadingListStart""")
-        for act in data['activities']:
-            roles_latex = "\\resumeItemListStart\n" + "\n".join([f"\\resumeItem{{{sanitize_latex(role.get('title'))}}} \\hfill \\textit{{{sanitize_latex(role.get('dates'))}}}" for role in act.get('roles', [])]) + "\n\\resumeItemListEnd"
-            latex_parts.append(f"\\resumeSubheading{{{sanitize_latex(act.get('organization'))}}}{{\\textbf{{{sanitize_latex(act.get('location'))}}}}}{{}}{{}}\n\\vspace{{-17pt}}\n{roles_latex}")
-        latex_parts.append(r"""\resumeSubHeadingListEnd
-\vspace{-18pt}""")
-    if data.get('skills'):
-        latex_parts.append(r"""
-\section{{\fontsize{9pt}{20pt}\selectfont \textbf{SKILLS}}}
-\resumeSubHeadingListStart""")
-        skills_latex = "\\vspace{-7pt}\n".join([f"\\resumeItem{{\\textbf{{{sanitize_latex(category)}:}} {sanitize_latex(skills)}}}" for category, skills in data['skills'].items()])
-        latex_parts.append(skills_latex)
-        latex_parts.append(r"""\resumeSubHeadingListEnd
-\vspace{-10pt}""")
+
+    section_order = ['summary', 'education', 'experience', 'projects', 'skills']
+    for key in section_order:
+        if key in data and data[key]:
+            value = data[key]
+            section_title = key.upper()
+            latex_parts.append(f"\\section{{{{\\fontsize{{9pt}}{{20pt}}\\selectfont \\textbf{{{section_title}}}}}}}")
+            latex_parts.append(r"\resumeSubHeadingListStart")
+
+            if key == 'summary':
+                latex_parts.append(f"\\resumeItem{{{sanitize_latex(value)}}}")
+            elif key == 'education':
+                for edu in value:
+                    details_list = edu.get('details', [])
+                    details = ""
+                    if details_list: details = "\\resumeItemListStart\n" + "\n".join([f"\\resumeItem{{{sanitize_latex(line)}}}" for line in details_list]) + "\n\\resumeItemListEnd"
+                    latex_parts.append(f"\\resumeSubheading{{{sanitize_latex(edu.get('university'))}}}{{\\textbf{{{sanitize_latex(edu.get('location'))}}}}}{{{sanitize_latex(edu.get('degree'))}}}{{{sanitize_latex(edu.get('dates'))}}}\n{details}")
+            elif key == 'experience':
+                for exp in value:
+                    points_list = exp.get('points', [])
+                    points = ""
+                    if points_list: points = "\\resumeItemListStart\n" + "\n".join([f"\\resumeItem{{{sanitize_latex(point)}}}" for point in points_list]) + "\n\\resumeItemListEnd"
+                    latex_parts.append(f"\\resumeSubheading{{{sanitize_latex(exp.get('company'))}}}{{\\textbf{{{sanitize_latex(exp.get('location'))}}}}}{{{sanitize_latex(exp.get('title'))}}}{{{sanitize_latex(exp.get('dates'))}}}\n{points}")
+            elif key == 'projects':
+                project_parts = []
+                for proj in value:
+                    points_list = proj.get('points', [])
+                    points = ""
+                    if points_list: points = "\\resumeItemListStart\n" + "\n".join([f"\\resumeItem{{{sanitize_latex(point)}}}" for point in points_list]) + "\n\\resumeItemListEnd"
+                    project_parts.append(f"\\resumeProjectHeading{{\\textbf{{{sanitize_latex(proj.get('name'))}}}}}{{\\textit{{{sanitize_latex(proj.get('dates'))}}}}}\n{points}")
+                latex_parts.append("\\vspace{-6pt}\n".join(project_parts))
+            elif key == 'skills' and isinstance(value, dict):
+                items = "\\vspace{-7pt}\n".join([f"\\resumeItem{{\\textbf{{{sanitize_latex(cat)}:}} {sanitize_latex(items)}}}" for cat, items in value.items()])
+                latex_parts.append(items)
+            
+            latex_parts.append(r"\resumeSubHeadingListEnd\vspace{-15pt}")
+    
     latex_parts.append(r"\end{document}")
     return "\n".join(latex_parts)
 
@@ -302,46 +204,27 @@ def find_unique_filename(base_name):
         counter += 1
 
 def main():
-    """Main function to run the resume generation process."""
-    print("--- Starting Resume Tailor ---")
-    
+    print("--- Starting Interactive Resume Builder ---")
     model = setup_api()
 
-    # --- Step 1: Archive old JSON and create new one from template ---
-    print("\n--- Step 1 of 3: Archiving old data and syncing from template ---")
-    archive_old_json()
-    if not update_json_from_template(model):
-        print("❌ Halting due to error in JSON update step.")
-        sys.exit(1)
-
-    # --- Step 2: Tailor content for the job description ---
-    print("\n--- Step 2 of 3: Tailoring content for the job ---")
-    try:
-        with open(BASE_RESUME_PATH, 'r', encoding='utf-8') as f:
-            base_resume_data = json.load(f)
-    except FileNotFoundError:
-        print(f"❌ Error: A new '{BASE_RESUME_PATH}' was not created. Cannot proceed.")
-        sys.exit(1)
-
+    # Step 1: Get user's core information
+    user_data = get_user_info()
+    
+    # Step 2: Get AI-generated creative content
     with open(JOB_DESCRIPTION_PATH, 'r', encoding='utf-8') as f:
         job_description_text = f.read()
 
-    tailored_sections = generate_tailored_content(model, base_resume_data, job_description_text)
-    if not tailored_sections:
-        print("❌ Exiting due to API error.")
+    creative_content = generate_creative_content(model, user_data, job_description_text)
+    if not creative_content:
+        print("❌ Could not generate creative content. Exiting.")
         return
         
-    # --- DEBUGGING STEP: Print the AI's response ---
-    print("\n✨ Here is the tailored content from the AI: ✨")
-    print(json.dumps(tailored_sections, indent=2))
-    # --------------------------------------------------
-
-    final_resume_data = base_resume_data.copy()
-    final_resume_data.update(tailored_sections)
+    # Step 3: Merge user data and AI content
+    final_resume_data = user_data.copy()
+    final_resume_data.update(creative_content)
     
-    # The 'template.tex' file is no longer needed for building.
-    # The build_latex_from_data function now constructs the entire document.
-    print("\n📄 Building final LaTeX document from tailored data...")
+    # Step 4: Build and compile the final PDF
+    print("\n📄 Building final LaTeX document...")
     final_latex = build_latex_from_data(final_resume_data)
     
     output_latex_file, output_pdf_file = find_unique_filename(BASE_OUTPUT_NAME)
@@ -349,13 +232,13 @@ def main():
     with open(output_latex_file, 'w', encoding='utf-8') as f:
         f.write(final_latex)
 
-    # --- Step 3: Compile the final PDF ---
-    print(f"\n--- Step 3 of 3: Compiling {output_pdf_file} ---")
-    for i in range(2): 
-        process = subprocess.run(['pdflatex', '-interaction=nonstopmode', output_latex_file], capture_output=True, text=True, encoding='utf-8')
+    print(f"📜 Compiling {output_pdf_file}...")
+    # Run twice to ensure all references (like page numbers) are correct.
+    process = subprocess.run(['pdflatex', '-interaction=nonstopmode', output_latex_file], capture_output=True, text=True, encoding='utf-8')
+    process = subprocess.run(['pdflatex', '-interaction=nonstopmode', output_latex_file], capture_output=True, text=True, encoding='utf-8')
 
     if process.returncode == 0:
-        print(f"✅ Successfully created {output_pdf_file}")
+        print(f"\n✅ Successfully created {output_pdf_file}!")
         print("🚀 Opening preview...")
         if sys.platform == "win32":
             os.startfile(output_pdf_file)

@@ -1,0 +1,71 @@
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@email.com",
+  "phone": "123-456-7890",
+  "linkedin": "linkedin.com/in/janedoe",
+  "github": "github.com/janedoe",
+  "summary": "Highly motivated and experienced data scientist with a passion for leveraging data to solve complex business problems. Proven ability to collect, analyze, and interpret large datasets to drive strategic decision-making.  Seeking a challenging role in a dynamic and innovative environment.",
+  "education": [
+    {
+      "university": "Stanford University",
+      "degree": "Master of Science in Data Science",
+      "dates": "2020-2022"
+    },
+    {
+      "university": "University of California, Berkeley",
+      "degree": "Bachelor of Science in Statistics",
+      "dates": "2016-2020"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Data Scientist",
+      "company": "Google",
+      "dates": "2022-Present",
+      "description": "Developed and implemented machine learning models to improve the accuracy of search results.  Collaborated with cross-functional teams to define project scope and deliver impactful results."
+    },
+    {
+      "title": "Data Analyst Intern",
+      "company": "Facebook",
+      "dates": "Summer 2021",
+      "description": "Analyzed user engagement data to identify areas for improvement in the user experience.  Presented findings to senior management and provided recommendations for action."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Customer Churn Prediction",
+      "description": "Developed a machine learning model to predict customer churn using various features such as demographics, purchase history, and customer service interactions. Achieved 90% accuracy in predicting churn."
+    },
+    {
+      "name": "Recommendation System",
+      "description": "Built a recommendation system using collaborative filtering to recommend products to users based on their past purchases and preferences."
+    }
+  ],
+  "skills": {
+    "Programming Languages": [
+      "Python",
+      "R",
+      "SQL"
+    ],
+    "Machine Learning": [
+      "Regression",
+      "Classification",
+      "Clustering",
+      "Deep Learning"
+    ],
+    "Data Visualization": [
+      "Tableau",
+      "Matplotlib",
+      "Seaborn"
+    ],
+    "Databases": [
+      "SQL",
+      "NoSQL"
+    ],
+    "Tools": [
+      "Git",
+      "Docker",
+      "AWS"
+    ]
+  }
+}

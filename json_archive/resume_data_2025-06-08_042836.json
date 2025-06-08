@@ -1,0 +1,93 @@
+{
+  "name": "John Doe",
+  "contact_info": {
+    "email": "john.doe@email.com",
+    "phone": "123-456-7890",
+    "linkedin": "linkedin.com/in/johndoe",
+    "github": "github.com/johndoe"
+  },
+  "education": [
+    {
+      "university": "Stanford University",
+      "degree": "Master of Science in Computer Science",
+      "dates": "2020-2022",
+      "gpa": "3.9/4.0"
+    },
+    {
+      "university": "University of California, Berkeley",
+      "degree": "Bachelor of Science in Electrical Engineering and Computer Sciences",
+      "dates": "2016-2020",
+      "gpa": "3.8/4.0"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer Intern",
+      "company": "Google",
+      "dates": "Summer 2021",
+      "description": "Developed a new feature for Google Maps using Java and Python."
+    },
+    {
+      "title": "Research Assistant",
+      "company": "Stanford Artificial Intelligence Lab",
+      "dates": "2020-2022",
+      "description": "Conducted research on machine learning algorithms and published a paper in a top conference."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Machine Learning Model for Image Classification",
+      "description": "Developed a machine learning model for image classification using TensorFlow and Keras. Achieved 95\\% accuracy on the CIFAR-10 dataset."
+    },
+    {
+      "name": "Web Application for E-commerce",
+      "description": "Developed a web application for e-commerce using React, Node.js, and MongoDB. Implemented features such as user authentication, product catalog, and shopping cart."
+    }
+  ],
+  "activities_and_leadership": [
+    {
+      "activity": "President of ACM",
+      "description": "Led a team of 10 students to organize workshops and events for the Association for Computing Machinery."
+    },
+    {
+      "activity": "Volunteer at Habitat for Humanity",
+      "description": "Volunteered for Habitat for Humanity to build houses for low-income families."
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "Java",
+      "Python",
+      "C++",
+      "JavaScript"
+    ],
+    "machine_learning": [
+      "TensorFlow",
+      "Keras",
+      "PyTorch",
+      "Scikit-learn"
+    ],
+    "databases": [
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL"
+    ],
+    "web_development": [
+      "React",
+      "Node.js",
+      "HTML",
+      "CSS"
+    ]
+  },
+  "awards": [
+    {
+      "name": "Dean's List",
+      "university": "Stanford University",
+      "dates": "2020-2022"
+    },
+    {
+      "name": "National Merit Scholar",
+      "dates": "2016"
+    }
+  ]
+}

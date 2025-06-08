@@ -1,0 +1,83 @@
+{
+  "name": "Jane Doe",
+  "phone": "+1-555-123-4567",
+  "email": "jane.doe@email.com",
+  "linkedin": "linkedin.com/in/janedoe",
+  "github": "github.com/janedoe",
+  "summary": "Highly motivated and results-oriented individual with a strong academic background in Computer Science and proven experience in software development.  Seeking a challenging role where I can leverage my skills and contribute to a dynamic team.",
+  "education": [
+    {
+      "university": "University of California, Berkeley",
+      "degree": "Master of Science in Computer Science",
+      "dates": "2020-2022",
+      "gpa": "3.9/4.0"
+    },
+    {
+      "university": "Stanford University",
+      "degree": "Bachelor of Science in Computer Science",
+      "dates": "2016-2020",
+      "gpa": "3.8/4.0"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer Intern",
+      "company": "Google",
+      "dates": "Summer 2021",
+      "description": "Developed and implemented a new feature for Google Maps using Java and Python.  Improved the efficiency of the existing codebase by 15\\%. Collaborated with a team of 5 engineers."
+    },
+    {
+      "title": "Research Assistant",
+      "company": "Stanford Artificial Intelligence Lab",
+      "dates": "2019-2020",
+      "description": "Assisted in research on machine learning algorithms.  Developed and implemented a new algorithm that improved the accuracy of the model by 10\\%."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project Alpha",
+      "description": "Developed a web application using React, Node.js, and MongoDB.  The application allows users to track their fitness goals."
+    },
+    {
+      "name": "Project Beta",
+      "description": "Developed a mobile application using Swift and iOS SDK.  The application allows users to order food from local restaurants."
+    }
+  ],
+  "activities_and_leadership": [
+    {
+      "activity": "ACM",
+      "description": "Member"
+    },
+    {
+      "activity": "IEEE",
+      "description": "President"
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "Java",
+      "Python",
+      "C++",
+      "JavaScript",
+      "Swift"
+    ],
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "AWS",
+      "Azure"
+    ],
+    "tools": [
+      "Git",
+      "Docker",
+      "Kubernetes"
+    ],
+    "other": [
+      "Machine Learning",
+      "Data Structures and Algorithms",
+      "Problem Solving",
+      "Teamwork"
+    ]
+  }
+}
