@@ -5,17 +5,29 @@
   "linkedin": "https://linkedin.com/in/yashwanthtirupati",
   "github": "https://github.com/proxiee",
   "summary": "Results-driven AI and Computer Vision Engineer with an M.S. in Computer Science and expertise in developing and deploying deep learning models for AR/VR. Proficient in C++ and Python with a strong background in PyTorch, developing novel algorithms, and optimizing on-device performance to improve model accuracy and system latency.",
-  "education": {
-    "university": "University of Dayton",
-    "location": "Dayton, Ohio, USA",
-    "degree": "M.S. in Computer Science",
-    "dates": "Aug 2023 - May 2025",
-    "details": [
-      "Concentrations: Autonomous Systems and Data Science",
-      "GPA: 3.41/4.00",
-      "Related Coursework: Data Structures & Algorithms, Objects & Design, Virtual Reality, Machine Learning, Artificial Intelligence, Object-Oriented Programming, Algorithm Design, Advanced Computer Vision."
-    ]
-  },
+  "education": [
+    {
+      "university": "University of Dayton",
+      "location": "Dayton, Ohio, USA",
+      "degree": "M.S. in Computer Science",
+      "dates": "Aug 2023 - May 2025",
+      "details": [
+        "Concentrations: Autonomous Systems and Data Science",
+        "GPA: 3.41/4.00",
+        "Related Coursework: Data Structures & Algorithms, Objects & Design, Virtual Reality, Machine Learning, Artificial Intelligence, Object-Oriented Programming, Algorithm Design, Advanced Computer Vision."
+      ]
+    },
+    {
+      "university": "Jawaharlal Nehru Technological University",
+      "location": "Hyderabad, Telangana, India",
+      "degree": "B.Tech. in Computer Science & Engineering",
+      "dates": "June 2018 - July 2022",
+      "details": [
+        "CGPA: 7.3/10.00",
+        "Related Coursework: Operating Systems, Database Management Systems, Computer Networks, Discrete Mathematics, Web Technologies, Software Engineering."
+      ]
+    }
+  ],
   "experience": [
     {
       "company": "Cognizant Technology Solutions",
@@ -84,12 +96,8 @@
     "Languages": "Python, Java, C++, C, JavaScript, Kotlin",
     "Frontend": "HTML, CSS, ReactJS, AJAX",
     "Backend Frameworks": "SpringBoot, NodeJS",
-    "Cloud": "AWS (S3, EC2, IAM, Lambda, A2I, SQS, SNS, VPC)",
     "Database": "MySQL, MongoDB, Postgres",
     "Automation": "Appium, Selenium, Cucumber BDD, Jenkins, JUnit",
-    "Big Data": "Hadoop, Hive, Apache Spark, Kafka",
-    "AI & ML": "PyTorch, TensorFlow, Jupyter, OpenCV, LLMs(GPT)",
-    "Other Tools": "Terraform, Elasticsearch, Splunk, JIRA, Confluence, Kubernetes, Docker, Postman, Git, Containerization, Linux, Visual Studio Code",
-    "Methodologies": "Agile, Scrum, SDLC, Test Driven Development(TDD), Root Cause Analysis, Code Review"
+    "AI & ML": "PyTorch, TensorFlow, Jupyter, OpenCV, LLMs(GPT)"
   }
 }

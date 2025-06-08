@@ -14,14 +14,12 @@ if len(sys.argv) < 2:
     print("Usage: python create_resume.py <path_to_job_description.txt>")
     sys.exit(1)
 JOB_DESCRIPTION_PATH = sys.argv[1]
-# We'll determine the final output filenames dynamically
 BASE_OUTPUT_NAME = "tailored_resume"
 
 def sanitize_latex(text):
     """Sanitizes text to be safe for LaTeX."""
     if not isinstance(text, str):
         return text
-    # Add more replacements here if needed
     text = text.replace('&', r'\&')
     text = text.replace('%', r'\%')
     text = text.replace('$', r'\$')
@@ -100,19 +98,22 @@ def build_latex_from_data(template_content, data):
     populated_template = populated_template.replace("{%%-GITHUB-%%}", data['github']) 
     populated_template = populated_template.replace("{%%-SUMMARY-%%}", sanitize_latex(data['summary']))
 
-    edu = data['education']
-    edu_details_list = []
-    for line in edu['details']:
-        if ':' in line:
-            parts = line.split(':', 1)
-            sanitized_title = sanitize_latex(parts[0])
-            sanitized_content = sanitize_latex(parts[1])
-            edu_details_list.append(f"\\resumeItem{{\\textbf{{{sanitized_title}:}}{sanitized_content}}}")
-        else:
-            edu_details_list.append(f"\\resumeItem{{{sanitize_latex(line)}}}")
-    edu_details = "\\resumeItemListStart\n" + "\n".join(edu_details_list) + "\n\\resumeItemListEnd"
-    edu_block = f"\\resumeSubHeadingListStart\n\\resumeSubheading{{{sanitize_latex(edu['university'])}}}{{\\textbf{{{sanitize_latex(edu['location'])}}}}}{{{sanitize_latex(edu['degree'])}}}{{{sanitize_latex(edu['dates'])}}}\n{edu_details}\n\\resumeSubHeadingListEnd"
-    populated_template = populated_template.replace("%%%-EDUCATION_BLOCK-%%%", edu_block)
+    # FIX: Loop through the list of education entries
+    edu_blocks = []
+    for edu in data['education']:
+        edu_details_list = []
+        for line in edu['details']:
+            if ':' in line:
+                parts = line.split(':', 1)
+                sanitized_title = sanitize_latex(parts[0])
+                sanitized_content = sanitize_latex(parts[1])
+                edu_details_list.append(f"\\resumeItem{{\\textbf{{{sanitized_title}:}}{sanitized_content}}}")
+            else:
+                edu_details_list.append(f"\\resumeItem{{{sanitize_latex(line)}}}")
+        edu_details = "\\resumeItemListStart\n" + "\n".join(edu_details_list) + "\n\\resumeItemListEnd"
+        edu_blocks.append(f"\\resumeSubheading{{{sanitize_latex(edu['university'])}}}{{\\textbf{{{sanitize_latex(edu['location'])}}}}}{{{sanitize_latex(edu['degree'])}}}{{{sanitize_latex(edu['dates'])}}}\n{edu_details}")
+    
+    populated_template = populated_template.replace("%%%-EDUCATION_BLOCK-%%%", "\\resumeSubHeadingListStart\n" + "\n".join(edu_blocks) + "\n\\resumeSubHeadingListEnd")
 
     exp_blocks = []
     for exp in data['experience']:
@@ -132,7 +133,6 @@ def build_latex_from_data(template_content, data):
         act_blocks.append(f"\\resumeSubheading{{{sanitize_latex(act['organization'])}}}{{\\textbf{{{sanitize_latex(act['location'])}}}}}{{}}{{}}\n\\vspace{{-17pt}}\n{roles_latex}")
     populated_template = populated_template.replace("%%%-ACTIVITIES_BLOCK-%%%", "\\resumeSubHeadingListStart\n" + "\n".join(act_blocks) + "\n\\resumeSubHeadingListEnd")
 
-    # FIX: Join the skills with the crucial \vspace{-7pt} to save space
     skills_latex = "\\vspace{-7pt}\n".join([f"\\resumeItem{{\\textbf{{{sanitize_latex(category)}:}} {sanitize_latex(skills)}}}" for category, skills in data['skills'].items()])
     populated_template = populated_template.replace("%%%-SKILLS_BLOCK-%%%", "\\resumeSubHeadingListStart\n" + skills_latex + "\n\\resumeSubHeadingListEnd")
     
