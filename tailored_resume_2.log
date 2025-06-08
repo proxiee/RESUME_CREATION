@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.7)  7 JUN 2025 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.6.7)  8 JUN 2025 02:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -403,24 +403,24 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 .tex) (tailored_resume_2.aux)
 \openout1 = `tailored_resume_2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
 
 (C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -437,7 +437,7 @@ ii
 \makeMPintoPDFobject=\count294
 \everyMPtoPDFconversion=\toks27
 )
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 47.
  (tailored_resume_2.out) (tailored_resume_2.out)
 \@outlinefile=\write3
 \openout3 = `tailored_resume_2.out'.
@@ -445,41 +445,41 @@ Package hyperref Info: Link coloring OFF on input line 50.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 53.
+(Font)              using `OT1/cmr/bx/n' instead on input line 51.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' in size <15> not available
-(Font)              size <14.4> substituted on input line 53.
+(Font)              size <14.4> substituted on input line 51.
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree2 on i
-nput line 54.
+nput line 52.
 
 (C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaweso
 mefree2.fd)
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 54.
+nput line 52.
 
 (C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaweso
 mefree1.fd)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 54.
+(Font)              <7> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 54.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 54
+(Font)              <5> on input line 52.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 52
 .
 
 (C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 55.
+ input line 53.
 
 (C:\Users\yashw\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaweso
 mebrands0.fd)
 LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <10> not 
 available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 55.
+n input line 53.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -498,7 +498,13 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 w/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome5/fa5free2.enc}{C:/U
 sers/yashw/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome5/fa5free1.
 enc}{C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome5/
-fa5brands0.enc}] (tailored_resume_2.aux)
+fa5brands0.enc}]
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 4.08003pt, for example:
+(fancyhdr)                \setlength{\footskip}{4.08003pt}.
+
+[2] (tailored_resume_2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -515,13 +521,13 @@ Package rerunfilecheck Info: File `tailored_resume_2.out' has not changed.
 (rerunfilecheck)             Checksum: D2277097CC15908D54B5E084A10775B8;589.
  ) 
 Here is how much of TeX's memory you used:
- 14129 strings out of 474486
- 246840 string characters out of 5743756
+ 14130 strings out of 474486
+ 246846 string characters out of 5743756
  1959542 words of memory out of 5000000
  36246 multiletter control sequences out of 15000+600000
  565821 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,459b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,519b,610s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome5
 /FontAwesome5Brands-Regular.pfb><C:/Users/yashw/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb><C:/Users/yashw/AppDa
@@ -532,9 +538,9 @@ shw/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
 cm/cmr10.pfb><C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmsy6.pfb><C:/Users/yashw/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmti10.pfb>
-Output written on tailored_resume_2.pdf (1 page, 120632 bytes).
+Output written on tailored_resume_2.pdf (2 pages, 123265 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 8 named destinations out of 1000 (max. 500000)
+ 91 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
