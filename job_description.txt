@@ -1,0 +1,55 @@
+Whether you’re an experienced professional or just getting started, your contributions matter at Fortra. If you’re passionate about tackling meaningful challenges alongside talented team members committed to helping each other succeed, all while having lots of fun, we want to hear from you. We offer competitive benefits and salaries, personal and professional development opportunities, flexibility, and much more! 
+
+At Fortra, we’re breaking the attack chain. Ready to join us? 
+
+This position is responsible for enhancing and maintaining existing software products as well as developing new products.  The ideal candidate has a strong desire for excellence, regularly takes initiative, works with minimal supervision, confidence in their expertise, collaborative team player and is a creative problem solver. 
+
+WHAT YOU'LL DO
+
+Design, develop, document, test, and debug new and existing software systems and/or applications for market sale or large-scale proprietary software for internal use. 
+Design and implement major new features and functionality
+Identify and evaluate new technologies for implementation. 
+Consult with end user to prototype, refine, test, and debug programs to meet needs.  
+Work within R&D to improve processes and best practices
+Innovate process solutions 
+Align best practices
+Monitor for and sometimes enforcement of standards
+Serve as technical expert on development projects. 
+Participate in full development life cycle including requirements analysis and design. 
+Write technical specifications based on conceptual design and stated business requirements. 
+Diagnose and fix complex product defects within a project or supporting customers.
+Work with limited supervision on complex projects. 
+Latitude for independent judgment. 
+Assist and mentor less experienced team members. 
+Actively participate in Agile ceremonies.
+Other duties as assigned.
+QUALIFICATIONS
+
+Typically requires 6 or more years of job experience and education, preferably a degree in Programming, Computer Science or related IT field.
+Very good knowledge of the field. 
+Proficiency in either Java or Python programming languages
+Proficiency in database fundamentals - SQL, DB design Knowledge of AWS Knowledge of containers - Docker/Podman, Kubernetes, Helm
+Experience with *nix operating systems - Linux and/or MacOS
+Working knowledge of the Agile Project development methodology and be able to implement those methodologies in active projects.
+Good working knowledge of the relevant programming language requirements for this role and the ability to share that knowledge with team members.
+Assist as a project leader from time to time or as a subject matter expert.
+High level of communication skills both verbal and written. 
+Mentoring skills. 
+Available to be on-call once a month
+3346
+
+At Fortra, our compensation philosophy prioritizes fair market value and internal equity, aligning with your experience and specialized skill set.  
+
+As a full-time, exempt employee at Fortra, you’ll enjoy a comprehensive benefits package that includes:  
+
+Health, dental, and vision coverage as of hire 
+Immediate enrollment in 401(k), HSA, and FSA plans 
+Flexible PTO policy  
+Tuition and personal enrichment reimbursement 
+Option to enroll in ID Theft Protection Program   
+Check out some of the of the other benefits we offer that are focused on your holistic well-being and our Diversity, Equity, and Inclusion program. 
+ 
+
+Compensation
+
+$100,000 - $150,000 USD

@@ -1,0 +1,86 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1.0pt}
+\input{glyphtounicode}
+
+% ... (All your custom commands and page settings from your original file are here)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\pdfgentounicode=1
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-2pt}\item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}\textbf{#1} & #2 \\\textit{\small#3} & \textit{\small #4} \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubSubheading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\textit{\small#1} & \textit{\small #2} \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeProjectHeading}[2]{\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}\small#1 & #2 \\\end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape {\fontsize{15pt}{20pt}\selectfont {%%-NAME-%%}} }\\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ {%%-PHONE-%%} ~ \href{mailto:{%%-EMAIL-%%}}{\raisebox{-0.2\height}\faEnvelope\  \underline{{%%-EMAIL-%%}}} ~ 
+    \href{{%%-LINKEDIN-%%}}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/yashwanthtirupati}} ~ 
+    \href{{%%-GITHUB-%%}}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/proxiee}}
+    \vspace{-8pt}
+\end{center}
+
+\section{{\fontsize{9pt}{20pt}\selectfont \textbf{SUMMARY}}}
+\resumeSubHeadingListStart
+\resumeItem{{%%-SUMMARY-%%}}
+\resumeSubHeadingListEnd
+\vspace{-18pt}
+
+\section{{\fontsize{9pt}{20pt}\selectfont \textbf{EDUCATION}}}
+%%%-EDUCATION_BLOCK-%%%
+\vspace{-18pt}
+
+\section{{\fontsize{9pt}{20pt}\selectfont \textbf{EXPERIENCE}}}
+%%%-EXPERIENCE_BLOCK-%%%
+\vspace{-17pt}
+
+\section{{\fontsize{9pt}{20pt}\selectfont \textbf{PROJECTS}}}
+%%%-PROJECTS_BLOCK-%%%
+\vspace{-17pt}
+
+\section{{\fontsize{9pt}{20pt}\selectfont \textbf{ACTIVITIES AND LEADERSHIP}}}
+%%%-ACTIVITIES_BLOCK-%%%
+\vspace{-18pt}
+
+\section{\textbf{Skills}}
+%%%-SKILLS_BLOCK-%%%
+\vspace{-10pt}
+
+\end{document}
