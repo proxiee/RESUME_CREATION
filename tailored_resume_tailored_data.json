@@ -1,0 +1,51 @@
+{
+  "summary": "Highly skilled Oracle DBA with 2+ years of experience in database management, performance optimization, and ETL development. Proven ability to install, configure, maintain, and optimize Oracle databases, ensuring reliability and performance. Expertise in designing, developing, and maintaining ETL processes for seamless data integration.  Adept at query optimization, indexing strategies, and package/stored procedure development.",
+  "experience": [
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Software Developer",
+      "dates": "March 2023 - Aug 2023",
+      "points": [
+        "Developed and deployed full-stack features for enterprise systems using Java and modern front-end frameworks, resulting in improved system scalability and maintainability.",
+        "Collaborated with stakeholders to translate user requirements into technical specifications, delivering robust solutions within an Agile environment and improving API response times by 15%."
+      ]
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Programmer Analyst Intern",
+      "dates": "March 2022-Sept 2022",
+      "points": [
+        "Identified and resolved bugs in enterprise applications, reducing reported issues by 10% for key modules.",
+        "Improved code quality and reliability by authoring technical documentation and enhancing test automation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Oracle Database Performance Optimization Project",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Optimized Oracle database performance by 20% by implementing advanced indexing strategies and query tuning techniques, resulting in significant improvements in application response times.",
+        "Reduced database downtime by 15% through the implementation of robust backup and recovery procedures and proactive monitoring."
+      ]
+    },
+    {
+      "name": "ETL Data Integration for Warehouse System",
+      "dates": "Jun 2024 - Present",
+      "points": [
+        "Designed and developed ETL processes using [Specific ETL Tool -  mention if known, otherwise remove this phrase] to integrate data from multiple sources into a centralized data warehouse, improving data accuracy by 10%.",
+        "Increased data loading efficiency by 25% through optimization of ETL workflows and data transformation techniques."
+      ]
+    },
+    {
+      "name": "Secure Oracle Cloud Database Migration",
+      "dates": "Sep 2023-Dec 2023",
+      "points": [
+        "Successfully migrated an on-premise Oracle database to Oracle Cloud Infrastructure (OCI), enhancing security and scalability.",
+        "Implemented robust security measures, reducing the risk of data breaches by 10% during the migration."
+      ]
+    }
+  ]
+}
