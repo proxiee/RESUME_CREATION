@@ -1,55 +1,44 @@
-Whether you’re an experienced professional or just getting started, your contributions matter at Fortra. If you’re passionate about tackling meaningful challenges alongside talented team members committed to helping each other succeed, all while having lots of fun, we want to hear from you. We offer competitive benefits and salaries, personal and professional development opportunities, flexibility, and much more! 
+Database Administrator
+South Paris, ME, US
+4 days ago
+Requisition ID: 2070
 
-At Fortra, we’re breaking the attack chain. Ready to join us? 
+Apply
+Salary Range:
+$120,000.00 To $130,000.00 Annually
+  
+Job Title: Oracle Database Administrator (DBA) with ETL Development Expertise
 
-This position is responsible for enhancing and maintaining existing software products as well as developing new products.  The ideal candidate has a strong desire for excellence, regularly takes initiative, works with minimal supervision, confidence in their expertise, collaborative team player and is a creative problem solver. 
+Precinmac is a leading supplier of mission-critical, precision machined components used in the aerospace and defense, semiconductor, and automation equipment sectors. We specialize in manufacturing uniquely designed high tolerance precision machined components and assemblies, with a focus on continuous improvement, on-time delivery, and the highest possible quality and consistency. 
 
-WHAT YOU'LL DO
+Job Summary
 
-Design, develop, document, test, and debug new and existing software systems and/or applications for market sale or large-scale proprietary software for internal use. 
-Design and implement major new features and functionality
-Identify and evaluate new technologies for implementation. 
-Consult with end user to prototype, refine, test, and debug programs to meet needs.  
-Work within R&D to improve processes and best practices
-Innovate process solutions 
-Align best practices
-Monitor for and sometimes enforcement of standards
-Serve as technical expert on development projects. 
-Participate in full development life cycle including requirements analysis and design. 
-Write technical specifications based on conceptual design and stated business requirements. 
-Diagnose and fix complex product defects within a project or supporting customers.
-Work with limited supervision on complex projects. 
-Latitude for independent judgment. 
-Assist and mentor less experienced team members. 
-Actively participate in Agile ceremonies.
-Other duties as assigned.
-QUALIFICATIONS
+We are seeking a highly skilled Oracle Database Administrator (DBA) with strong ETL development capabilities to oversee, optimize, and secure our Oracle database environments while supporting critical data integration initiatives. The ideal candidate will possess expertise in database management, performance optimization, and ETL development, ensuring seamless data operations, integrity, and security.
 
-Typically requires 6 or more years of job experience and education, preferably a degree in Programming, Computer Science or related IT field.
-Very good knowledge of the field. 
-Proficiency in either Java or Python programming languages
-Proficiency in database fundamentals - SQL, DB design Knowledge of AWS Knowledge of containers - Docker/Podman, Kubernetes, Helm
-Experience with *nix operating systems - Linux and/or MacOS
-Working knowledge of the Agile Project development methodology and be able to implement those methodologies in active projects.
-Good working knowledge of the relevant programming language requirements for this role and the ability to share that knowledge with team members.
-Assist as a project leader from time to time or as a subject matter expert.
-High level of communication skills both verbal and written. 
-Mentoring skills. 
-Available to be on-call once a month
-3346
+Key Responsibilities
 
-At Fortra, our compensation philosophy prioritizes fair market value and internal equity, aligning with your experience and specialized skill set.  
+Experience with Oracle Cloud FCCS and PBCS is preferred.
+Install, configure, maintain, and optimize Oracle databases, ensuring reliability and performance.
+Perform patching, backup, recovery, and troubleshooting tasks to maintain system integrity.
+Analyze and tune database performance, including query optimization, indexing strategies, and overall efficiency.
+Design, develop, and maintain ETL processes to facilitate seamless data extraction, transformation, and integration from multiple sources into data warehouses and data marts.
+Optimize ETL workflows for performance, scalability, and data quality.
+Collaborate with development teams to ensure database architecture aligns with application requirements and performance goals.
+Qualifications & Requirements
 
-As a full-time, exempt employee at Fortra, you’ll enjoy a comprehensive benefits package that includes:  
+Bachelor’s degree in Computer Science, Information Technology, or a related field (equivalent experience and certifications will be considered).
+2+ years of experience as an Oracle DBA, with hands-on expertise in database installation, patching, performance tuning, and backup/recovery.
+2+ years of experience in ETL development, including data extraction, transformation, and loading processes.
+Strong ability to develop packages and stored procedures.
+Excellent communication skills and ability to work independently as well as with cross-functional teams.
+Must be a U.S. citizen
+Benefits
 
-Health, dental, and vision coverage as of hire 
-Immediate enrollment in 401(k), HSA, and FSA plans 
-Flexible PTO policy  
-Tuition and personal enrichment reimbursement 
-Option to enroll in ID Theft Protection Program   
-Check out some of the of the other benefits we offer that are focused on your holistic well-being and our Diversity, Equity, and Inclusion program. 
- 
+Competitive salary and comprehensive benefits package.
+Opportunities for professional development and career growth.
+Collaborative work environment with innovative projects.
+This position can be remote, at one of our offices or hybrid.
+Salary up to $130,000 depending on experience
+For information on Precinmac, including more information on employee benefits and our company culture, visit our website at www.precinmac.com
 
-Compensation
-
-$100,000 - $150,000 USD
+Precinmac is an equal opportunity, affirmative action employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws.
