@@ -37,6 +37,7 @@ def generate_tailored_cover_letter_latex(model, base_letter_content, resume_data
         * In the LaTeX template, find the recipient's details (name, company, location) and replace them with the correct information from the job description. If no specific person is named, use "Hiring Manager".
         
     3.  **Completely Rewrite the Body:**
+        * Add the percentage sign (%) where ever necessary for as seen in the resume.
         * Each paragraph should be grammatically correct and well-structured (Include full-stops at the end and make sure to be gramatically correct).
         * Do not sepcify where the job is posted.
         * Locate the body of the letter (the text between the greeting and the closing).
