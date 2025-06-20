@@ -1,0 +1,51 @@
+{
+  "summary": "Highly motivated recent graduate seeking a Junior Web Developer role. Proven ability in full-stack development,  delivering high-quality, maintainable code and optimizing user experience.  Expertise in Java, JavaScript frameworks (React/Vue.js preferred), and agile methodologies. Eager to contribute to a collaborative team and make a significant impact.",
+  "experience": [
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Software Developer",
+      "dates": "March 2023 - Aug 2023",
+      "points": [
+        "Developed and deployed full-stack features for enterprise systems using Spring Boot (Java) and modern front-end frameworks, resulting in improved code maintainability and extensibility.",
+        "Collaborated with stakeholders to translate user requirements into technical specifications, delivering robust solutions within an Agile environment; improved API response times by 15%."
+      ]
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Programmer Analyst Intern",
+      "dates": "March 2022-Sept 2022",
+      "points": [
+        "Identified and resolved bugs in enterprise applications, reducing reported issues by 10% for key modules.",
+        "Improved code quality and reliability by authoring technical documentation and enhancing test automation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Responsive E-commerce Website Redesign",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Redesigned an e-commerce website using React, improving page load speed by 30% and increasing conversion rates by 15% through A/B testing and UI/UX optimization.",
+        "Implemented responsive design principles, ensuring optimal user experience across various devices and screen sizes.  Integrated secure payment gateway and enhanced SEO."
+      ]
+    },
+    {
+      "name": "Interactive Data Visualization Dashboard",
+      "dates": "Jun 2024 - Present",
+      "points": [
+        "Developed an interactive data visualization dashboard using Vue.js and D3.js, allowing users to explore complex datasets with intuitive filtering and sorting capabilities.",
+        "Improved data accessibility and understanding for 100+ users through clear data representation and user-friendly interactions."
+      ]
+    },
+    {
+      "name": "Dynamic Web Application with User Authentication",
+      "dates": "Sep 2023-Dec 2023",
+      "points": [
+        "Built a dynamic web application using Node.js and Express.js with robust user authentication and authorization features.",
+        "Implemented secure data handling practices, ensuring user data privacy and protecting against common web vulnerabilities."
+      ]
+    }
+  ]
+}

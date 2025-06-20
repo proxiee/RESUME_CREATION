@@ -1,44 +1,29 @@
-About HeyGen
-
-At HeyGen, our mission is to make visual storytelling accessible to all. Over the last decade, visual content has become the preferred method of information creation, consumption, and retention. But the ability to create such content, in particular videos, continues to be costly and challenging to scale. Our ambition is to build technology that equips more people with the power to reach, captivate, and inspire audiences.
-Learn more at www.heygen.com.  Visit our Mission and Culture doc here. 
-
-Position Summary
-
-As a Software Engineer, Dev Productivity, you’ll work at the intersection of software development, automation, and infrastructure. Your mission is to streamline engineering workflows, optimize CI/CD systems, build and testing infrastructure, and enhance developer tooling to accelerate software delivery.
-
-Key Responsibilities
-
-Design, build, and maintain high-performance CI/CD pipelines to improve development speed and reliability.
-Develop internal tools and automation to reduce friction in engineering workflows.
-Optimize build and test infrastructure for faster feedback loops.
-Work closely with engineering teams to identify and eliminate inefficiencies in the development process.
-Enhance and monitor developer environments to improve developer experience
-Advocate for best practices in software development, version control, and release management.
-Drive the adoption of automation and tooling that increase engineering efficiency.
-Key Qualifications
-
-Strong experience with CI/CD tools like GitHub Actions, Jenkins, GitLab CI, Buildkite, or CircleCI.
-Experience with build systems (e.g., Bazel, CMake, Make, Gradle).
-Experience with python dependency management (e.g. poetry, uv)
-Knowledge of containerization and Kubernetes for scalable builds and testing.
-Strong problem-solving skills and a passion for improving developer experience.
-Proficiency in scripting and automation with Python, Bash, or Go.
-Excellent communication skills and ability to work across teams.
-Preferred Qualifications
-
-Experience with docker image build optimization
-Experience with bazel
-Experience with GPUs
-What HeyGen Offers
-
-Competitive salary and benefits package.
-Dynamic and inclusive work environment.
-Opportunities for professional growth and advancement.
-Collaborative culture that values innovation and creativity.
-Access to the latest technologies and tools.
-Salary Range
-$180,000 – 240,000 annually
-Please note that the salary information is a general guideline only.  HeyGen considers factors such as scope and responsibilities of the position, candidate's work experience, education/training, key skills, and internal equity, as well as location, market and business considerations when extending an offer.  As part of our total rewards package, HeyGen offers comprehensive benefits including a 401k plan, health benefits, generous PTO, a parental leave program and emotional health resources.
-
-HeyGen is an Equal Opportunity Employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.
+Lensa is the leading career site for job seekers at every stage of their career. Our client, NTT DATA North America, is seeking professionals. Apply via Lensa today!
+At NTT DATA, we know that with the right people on board, anything is possible. The quality, integrity, and commitment of our employees are key factors in our company's growth, market presence and our ability to help our clients stay ahead of the competition. By hiring the best people and helping them grow both professionally and personally, we ensure a bright future for NTT DATA and for the people who work here.
+Description
+As a Full Stack Developer, you will contribute to the creation of our client’s robust suite of cloud-native enterprise applications in the rapidly growing healthcare software industry. You will be a member of a dev team working collaboratively with others in an Agile organization to deliver software that sustains and improves the health of individuals and communities.
+With more than 4,000 associates, our client enables access to data across applications, transforming how clinicians and patients interact with technology, which enhances their ability to better serve communities with greater agility and responsiveness. Their associates leverage technology to create collaborative solutions that improve health decisions every day. They are advocates for a compassionate and just society through their actions and words, and they are developing software solutions to support that mission.
+Responsibilities
+- Design and develop high-quality, cloud-native web applications using JavaScript/TypeScript and the React framework. 
+- Translate complex business requirements into modular, scalable, and maintainable code with clear implementation strategies. 
+- Write comprehensive unit and integration tests to ensure robust functionality and prevent regression issues. 
+- Contribute to and participate in design and code reviews, promoting best practices and code quality across the team. 
+- Collaborate closely with cross-functional teams including Product Management, UI/UX, and QA to ensure alignment with technical and functional specifications. 
+- Actively engage in Agile ceremonies such as daily stand-ups, sprint planning, demos, and retrospectives, driving continuous improvement and team alignment. 
+Required Experience
+- React (JavaScript/TypeScript): Minimum of 3 years of hands-on experience building and maintaining modern web applications using React. Candidate should demonstrate strong knowledge of component-based architecture, hooks, state management, and performance optimization techniques. 
+- Java & Spring Boot: Must have strong hands-on experience developing scalable backend services using Java and Spring Boot framework. Proficiency in REST API design, security best practices, dependency injection, and configuration management is expected. 
+- Microservices Architecture: Proven experience designing, developing, and deploying applications following a microservices-based architecture. Should be familiar with concepts such as service discovery, inter-service communication, fault tolerance, and service decomposition. 
+- Micro Frontend Architecture: Exposure to or experience with micro frontend patterns, including federated modules, independent deployment strategies, and integration of multiple frontends in a shared ecosystem, is highly desirable. 
+- MongoDB: Solid understanding and experience with MongoDB or other NoSQL databases, including schema design, query optimization, indexing strategies, and performance tuning. 
+- Agile Development Practices: Experience working in Agile environments with familiarity in participating in sprints, daily stand-ups, planning sessions, and retrospectives. 
+- Cloud Platforms (Nice to Have): Familiarity or hands-on experience with Google Cloud Platform (GCP) is a plus, particularly with services like Cloud Run, Pub/Sub, Firestore, and deployment pipelines. 
+- Education: Bachelor’s degree in computer science, Software Engineering, or a related field is preferred. 
+About NTT DATA
+NTT DATA is a $30 billion trusted global innovator of business and technology services. We serve 75% of the Fortune Global 100 and are committed to helping clients innovate, optimize and transform for long-term success. As a Global Top Employer, we have diverse experts in more than 50 countries and a robust partner ecosystem of established and start-up companies. Our services include business and technology consulting, data and artificial intelligence, industry solutions, as well as the development, implementation and management of applications, infrastructure and connectivity. We are one of the leading providers of digital and AI infrastructure in the world. NTT DATA is a part of NTT Group, which invests over $3.6 billion each year in R&D to help organizations and society move confidently and sustainably into the digital future. Visit us at us.nttdata.com (http://us.nttdata.com/en)
+NTT DATA endeavors to make https://us.nttdata.com (https://us.nttdata.com/en) accessible to any and all users. If you would like to contact us regarding the accessibility of our website or need assistance completing the application process, please contact us at https://us.nttdata.com/en/contact-us . This contact information is for accommodation requests only and cannot be used to inquire about the status of applications. NTT DATA is an equal opportunity employer. Qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability or protected veteran status. For our EEO Policy Statement, please click here (https://us.nttdata.com/en/compliance#eeos) . If you'd like more information on your EEO rights under the law, please click here (https://us.nttdata.com/en/compliance#know-your-rights) . For Pay Transparency information, please click here (https://us.nttdata.com/en/compliance#ppnp) .
+If you have questions about this posting, please contact support@lensa.com
+                
+            
+                            
+            

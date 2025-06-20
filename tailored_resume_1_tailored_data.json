@@ -1,0 +1,54 @@
+{
+  "summary": "Full-stack developer proficient in Java/Spring Boot, React, and microservices architecture.  Experienced in building scalable, cloud-native applications,  with a proven track record of delivering high-quality software within Agile environments.  Seeking to leverage expertise to contribute to innovative healthcare solutions.",
+  "experience": [
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Software Developer",
+      "dates": "March 2023 - Aug 2023",
+      "points": [
+        "Developed and deployed full-stack features for enterprise systems using Spring Boot (Java) and React, resulting in 15% faster API response times.",
+        "Collaborated with stakeholders to translate user requirements into technical specifications within an Agile team, delivering robust solutions."
+      ]
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "location": "Chennai, Tamil Nadu, India",
+      "title": "Programmer Analyst Intern",
+      "dates": "March 2022-Sept 2022",
+      "points": [
+        "Improved key module reliability by identifying and fixing bugs, leading to a 10% reduction in reported issues.",
+        "Enhanced test automation and authored technical documentation to improve code quality and reliability."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Cloud-Native Healthcare Platform",
+      "dates": "Jan 2024-May 2025",
+      "points": [
+        "Developed a scalable, microservices-based platform using Spring Boot and React, improving data access across applications by 20%.",
+        "Implemented RESTful APIs adhering to security best practices, resulting in a 10% increase in system resilience.",
+        "Utilized MongoDB for efficient data storage, optimizing query performance by 15%."
+      ]
+    },
+    {
+      "name": "React-based Patient Portal",
+      "dates": "Jun 2024 - Present",
+      "points": [
+        "Designed and developed a user-friendly patient portal using React and TypeScript, improving patient engagement metrics by 25%.",
+        "Implemented robust unit and integration tests, reducing bug occurrence during deployment by 12%.",
+        "Collaborated with UI/UX designers to create intuitive, accessible interface designs."
+      ]
+    },
+    {
+      "name": "Microservice for Secure Data Exchange",
+      "dates": "Sep 2023-Dec 2023",
+      "points": [
+        "Developed a secure microservice for data exchange using Spring Boot, ensuring HIPAA compliance and data integrity.",
+        "Implemented robust logging and monitoring, improving system troubleshooting efficiency by 20%.",
+        "Utilized a message queue for asynchronous communication, enhancing system scalability by 15%."
+      ]
+    }
+  ]
+}
